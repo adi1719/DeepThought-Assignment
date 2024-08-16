@@ -6,18 +6,15 @@ This API allows you to manage events using MongoDB for data storage. You can ret
 
 ### 1. Get Event by Unique ID
 
-Retrieve an event using its unique ID.
 
-- **Endpoint:** `GET /events/{id}`
-- **Parameters:**
-  - `id` (path parameter): The unique ID of the event.
-- **Response:**
-  - **200 OK**: Returns the event details.
-  - **404 Not Found**: If the event with the specified ID does not exist.
-
-**Example Request:**
+**Example GET Request:**
 ```bash
-curl -X GET "https://api.example.com/events/605c72ef1f1c4e001f647bc1"
+curl --location 'http://localhost:8000/api/v3/app/events' \
+--data ''
+```
+
+**Example POST Request:**
+```bash
 curl --location 'http://localhost:8000/api/v3/app/events' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -35,3 +32,4 @@ curl --location 'http://localhost:8000/api/v3/app/events' \
   "attendees": ["user_567", "user_890", "user_234"]
 }
 '
+```
